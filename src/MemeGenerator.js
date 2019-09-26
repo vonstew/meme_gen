@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import memeStyle from "./App.css"
 
 class MemeGenerator extends Component {
     constructor()
@@ -39,8 +40,8 @@ class MemeGenerator extends Component {
     render() {
         return(
             <div> 
-                <form className = "meme-form" onSubmit = {this.handleSubmit}>
-                <input 
+                <form className = {memeStyle.meme_form} onSubmit = {this.handleSubmit}>
+                <input className ={memeStyle.input}
                     type = "text"
                     name = "topText"
                     placeholder = "Top Text"
@@ -54,12 +55,12 @@ class MemeGenerator extends Component {
                     value = {this.state.bottomText}
                     onChange = {this.handleChange}
                     />
-                    <button>Gen</button>
+                    <button className = {memeStyle.button} >Gen</button>
                 </form>
-                <div className = "meme">
-                    <img src = {this.state.randomImg} alt = ""/>
-                    <h2 className = "top"> {this.state.topText} </h2>
-                    <h2 className = "bottom"> {this.state.bottomText} </h2>
+                <div className = {memeStyle.meme}>
+                    <img className = {memeStyle.img} src = {this.state.randomImg} alt = ""/>
+                    <h2 className = {memeStyle.h2}> {this.state.topText} </h2>
+                    <h2 className = {memeStyle.h2}> {this.state.bottomText} </h2>
                     </div>
             </div>
         )
